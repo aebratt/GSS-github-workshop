@@ -1,5 +1,9 @@
 # Sample gitignore file for R Scripts
 
+# OS generated files 
+.DS_Store
+.DS_Store?
+
 # History files
 .Rhistory
 .Rapp.history
@@ -13,7 +17,6 @@
 # RStudio files
 .Rproj.user/
 .Rproj
-.DS_Store
 
 # knitr and R markdown default cache directories
 *_cache/
