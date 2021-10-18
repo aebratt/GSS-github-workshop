@@ -1,8 +1,8 @@
 ---
-title: "Atlantic Yellow-nosed Albatross<br>in the South Atlantic"
-subtitle: "An integrated population model"
-author: "Abby Bratt, <br> Sarah Converse, Steffen Oppel <br><span style = 'font-size: 50%;'>WACFWRU Symposium<br></span>"
-date: 'October 27, 2021<br><br>`r icons::icon_style(icons::fontawesome("twitter"), scale = 1, fill = "#b58900")` [\@labbbratt](https://twitter.com/labbbratt/) <br>`r icons::icon_style(icons::fontawesome("envelope"), scale = 1, fill = "#b58900")` aebratt@uw.edu'
+title: "Git and GitHub"
+subtitle: "A workshop for useRs"
+author: "Abby Bratt, Brielle K Thompson, Zoe Rand <br><span style = 'font-size: 50%;'>SAFS GSS 2021<br></span>"
+date: 'October 27, 2021<br><br>`r icons::icon_style(icons::fontawesome("github"), scale = 1, fill = "#b58900")` [Github repo link](https://github.com/aebratt/GSS-github-workshop)'
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -58,8 +58,6 @@ style_solarized_light(
   header_font_google = google_font("Josefin Sans"),
   text_font_google   = google_font("Montserrat", "300", "300i"),
   code_font_google   = google_font("Fira Mono"),
-  title_slide_background_image = "libs/imgs/Gough4_DerrenFox.webp"
-  #title_slide_background_image = "libs/imgs/AYNA2_ChrisJones.jpeg"
   )
 ```
 
@@ -72,160 +70,105 @@ library(here)
 library(knitr)
 library(xaringanBuilder)
 library(chromote)
-#build_pdf(here("presentations", "SHLA_wg_bratt_2021.Rmd"), partial_slides = TRUE)
+#build_pdf(here("presentations", "SAFS_GSS_Git_workshop_2021.Rmd"), partial_slides = TRUE)
 ```
-
-.center[
-```{r goughMap, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/GoughZoom.gif")
-```
-]
-**Image** Google Earth
-
 
 ---
 
-
-.center[
-```{r gough1, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/Gough_GoughIslandRestoration.jpeg")
-```
-]
-**Image** Gough Island Restoration
-
----
-
-
-.center[
-```{r gough2, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/Gough2_KLawrence.webp")
-```
-]
-**Image** Kate Lawrence
-
----
-
-
-.center[
-```{r AYNA1, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/AYNA_ChrisJones.jpeg")
-```
-]
-**Image** Chris Jones
-
----
-
-.center[
-```{r mouse, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/MusMusculus_GenomeBC.jpeg")
-```
-]
-**Image** Genome BC
-
----
-
-.center[
-```{r rescuers2, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/TheRescuers2.jpeg")
-```
-]
-**Image** Disney
-
----
-
-.center[
-```{r AYNAmouse, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/AlbatrossMouseGough_RSPB.jpeg")
-```
-]
-**Image** Royal Society for the Protection of Birds
-
----
-
-.center[
-```{r bycatch, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/AlbatrossBycatch_EmilyEng.png")
-```
-]
-**Image** Emily Eng
-
----
-
-.center[
-```{r AYNAbycatch1, echo = FALSE, out.width="50%"}
-knitr::include_graphics("libs/imgs/AYNAbycatch_AOsborne.webp")
-```
-]
-**Image** Alexis Osborne
-
----
-
-.center[
-```{r AYNAbycatch2, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/AYNAbycatch_ChrisJones.webp")
-```
-]
-**Image** Chris Jones
-
----
-
-## Project goals
+# Pre-workshop homework
 
 --
 
-- complete development of an integrated population model for AYNA on Gough Island
+`r icons::icon_style(icons::fontawesome("git"), scale = 1, fill = "#b58900")` Ensure you have git on your [Mac](https://happygitwithr.com/install-git.html#macos) or [Windows](https://happygitwithr.com/install-git.html#install-git-windows)
 
 --
 
-- use the model to estimate impacts of invasive house mice and fisheries bycatch on AYNA survival
+`r icons::icon_style(icons::fontawesome("github"), scale = 1, fill = "#b58900")` [Make a GitHub account](https://github.com/)
 
 --
 
-- project the Gough Island AYNA population forward under alternative predation and bycatch scenarios
+`r icons::icon_style(icons::fontawesome("r-project"), scale = 1, fill = "#b58900")` Download [R](https://cran.rstudio.com/) and [RStudio](https://www.rstudio.com/products/rstudio/download/)
 
 --
 
-- perform a population viability analysis under those alternatives
+`r icons::icon_style(icons::fontawesome("link"), scale = 1, fill = "#b58900")` [Link GitHub ad RStudio](https://happygitwithr.com/connect-intro.html)
+
+--
+
+`r icons::icon_style(icons::fontawesome("gitkraken"), scale = 1, fill = "#b58900")` **Optional** [Download GitKraken](https://www.gitkraken.com/download)
+
+--
+
+`r icons::icon_style(icons::fontawesome("graduation-cap"), scale = 1, fill = "#b58900")` **Optional** [Sign up for free student resources on GitHub](https://education.github.com/pack)
 
 ---
 
-## Preliminary results
+# Outline of workshop
 
----
-
-## Acknowledgements
+- Short lecture on suggested Git workflow
 
 --
 
-**Funding**
+- Demos of essential skills
+  - Cache git credentials
+  - Cloning a repository from GitHub to your computer using RStudio
+  - Creating branches for feature development in RStudio
+  - Resolving merge conflicts
+  - Editing the `.gitignore` file
+  - What to do if something gets f*cked up
+  
+--
+  
+- Breakout groups to practice skills above
+
+---
+
+# If we have time
+
+- Making and using template repositories
+- Using pull requests
+- What to do if you have large files (that you want on GitHub)
+- A little bit of Git from the command line
+- A little bit of Git from GitKraken
+
+---
+
+# Why git
+
+
+
+---
+
+# Why git
 
 .pull-left[
-```{r acknowledge1, echo = FALSE, out.width="80%"}
-knitr::include_graphics("libs/imgs/qermlogo.png")
+
+**Before git...**
+
+```{r before, echo = FALSE, out.width="100%"}
+knitr::include_graphics("libs/imgs/before_git.gif")
 ```
 ]
+
+--
 
 .pull-right[
-```{r acknowledge2, echo = FALSE, out.width="80%"}
-knitr::include_graphics("libs/imgs/wacfwru_logo.jpg")
+
+**After git...**
+
+```{r after, echo = FALSE, out.width="100%"}
+knitr::include_graphics("libs/imgs/after_git.gif")
 ```
 ]
 
---
+---
 
-**Modeling team**
-Peter Ryan, Cat Horswill, and others
+# Learning objectives
 
---
-
-**Data**
-The Gough Island Restoration Programme is being carried out by the RSPB in partnership with Tristan da Cunha, BirdLife South Africa, the Department of Forestry, Fisheries and the Environment (South Africa), the Royal Zoological Society of Scotland, Island Conservation, Conservación de Islas, Manaaki Whenua - Landcare Research and BirdLife International. The programme is part-funded by the RSPB, the UK Government, the National Fish and Wildlife Foundation and other generous individuals and organisations.
-
---
-
-**Title slide image** Derren Fox **Final slide image** Chris Jones
 
 ---
-class: final-slide, inverse
 
+# Git vs GitHub
+
+---
 
