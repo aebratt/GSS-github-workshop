@@ -358,6 +358,20 @@ knitr::include_graphics("libs/imgs/git-branches-merge.png")
 
 # Fixing a f*ck up - go back in time
 
+**Small difference**
+
+Copy and paste from **diff** 
+
+--
+
+**Big difference**
+
+```git revert --no-commit *numberOfCommitYouWant*..HEAD```
+
+or 
+
+UNDO in GitKraken
+
 ---
 
 # Fixing a f*ck up - really bad
