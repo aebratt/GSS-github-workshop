@@ -1,8 +1,8 @@
 ---
-title: "Atlantic Yellow-nosed Albatross<br>in the South Atlantic"
-subtitle: "An integrated population model"
-author: "Abby Bratt, <br> Sarah Converse, Steffen Oppel <br><span style = 'font-size: 50%;'>WACFWRU Symposium<br></span>"
-date: 'October 27, 2021<br><br>`r icons::icon_style(icons::fontawesome("twitter"), scale = 1, fill = "#b58900")` [\@labbbratt](https://twitter.com/labbbratt/) <br>`r icons::icon_style(icons::fontawesome("envelope"), scale = 1, fill = "#b58900")` aebratt@uw.edu'
+title: "Git and GitHub"
+subtitle: "A workshop for useRs"
+author: "Abby Bratt, Brielle K Thompson, Zoe Rand <br><span style = 'font-size: 50%;'>SAFS GSS 2021<br></span>"
+date: 'October 27, 2021<br><br>`r icons::icon_style(icons::fontawesome("github"), scale = 1, fill = "#b58900")` [Github repo link](https://github.com/aebratt/GSS-github-workshop)'
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -58,8 +58,6 @@ style_solarized_light(
   header_font_google = google_font("Josefin Sans"),
   text_font_google   = google_font("Montserrat", "300", "300i"),
   code_font_google   = google_font("Fira Mono"),
-  title_slide_background_image = "libs/imgs/Gough4_DerrenFox.webp"
-  #title_slide_background_image = "libs/imgs/AYNA2_ChrisJones.jpeg"
   )
 ```
 
@@ -72,160 +70,323 @@ library(here)
 library(knitr)
 library(xaringanBuilder)
 library(chromote)
-#build_pdf(here("presentations", "SHLA_wg_bratt_2021.Rmd"), partial_slides = TRUE)
+#build_pdf(here("presentations", "SAFS_GSS_Git_workshop_2021.Rmd"), partial_slides = TRUE)
 ```
 
-.center[
-```{r goughMap, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/GoughZoom.gif")
-```
-]
-**Image** Google Earth
-
-
----
-
-
-.center[
-```{r gough1, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/Gough_GoughIslandRestoration.jpeg")
-```
-]
-**Image** Gough Island Restoration
-
----
-
-
-.center[
-```{r gough2, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/Gough2_KLawrence.webp")
-```
-]
-**Image** Kate Lawrence
-
----
-
-
-.center[
-```{r AYNA1, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/AYNA_ChrisJones.jpeg")
-```
-]
-**Image** Chris Jones
-
----
-
-.center[
-```{r mouse, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/MusMusculus_GenomeBC.jpeg")
-```
-]
-**Image** Genome BC
-
----
-
-.center[
-```{r rescuers2, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/TheRescuers2.jpeg")
-```
-]
-**Image** Disney
-
----
-
-.center[
-```{r AYNAmouse, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/AlbatrossMouseGough_RSPB.jpeg")
-```
-]
-**Image** Royal Society for the Protection of Birds
-
----
-
-.center[
-```{r bycatch, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/AlbatrossBycatch_EmilyEng.png")
-```
-]
-**Image** Emily Eng
-
----
-
-.center[
-```{r AYNAbycatch1, echo = FALSE, out.width="50%"}
-knitr::include_graphics("libs/imgs/AYNAbycatch_AOsborne.webp")
-```
-]
-**Image** Alexis Osborne
-
----
-
-.center[
-```{r AYNAbycatch2, echo = FALSE, out.width="100%"}
-knitr::include_graphics("libs/imgs/AYNAbycatch_ChrisJones.webp")
-```
-]
-**Image** Chris Jones
-
----
-
-## Project goals
+# Pre-workshop homework
 
 --
 
-- complete development of an integrated population model for AYNA on Gough Island
+`r icons::icon_style(icons::fontawesome("git"), scale = 1, fill = "#b58900")` Ensure you have git on your [Mac](https://happygitwithr.com/install-git.html#macos) or [Windows](https://happygitwithr.com/install-git.html#install-git-windows)
 
 --
 
-- use the model to estimate impacts of invasive house mice and fisheries bycatch on AYNA survival
+`r icons::icon_style(icons::fontawesome("github"), scale = 1, fill = "#b58900")` [Make a GitHub account](https://github.com/)
 
 --
 
-- project the Gough Island AYNA population forward under alternative predation and bycatch scenarios
+`r icons::icon_style(icons::fontawesome("r-project"), scale = 1, fill = "#b58900")` Download [R](https://cran.rstudio.com/) and [RStudio](https://www.rstudio.com/products/rstudio/download/)
 
 --
 
-- perform a population viability analysis under those alternatives
+`r icons::icon_style(icons::fontawesome("link"), scale = 1, fill = "#b58900")` [Link GitHub and RStudio](https://happygitwithr.com/connect-intro.html)
+
+--
+
+`r icons::icon_style(icons::fontawesome("gitkraken"), scale = 1, fill = "#b58900")` **Optional** [Download GitKraken](https://www.gitkraken.com/download)
+
+--
+
+`r icons::icon_style(icons::fontawesome("graduation-cap"), scale = 1, fill = "#b58900")` **Optional** [Sign up for free student resources on GitHub](https://education.github.com/pack)
 
 ---
 
-## Preliminary results
+# Outline of workshop
 
----
-
-## Acknowledgements
+- Short lecture on suggested Git workflow
 
 --
 
-**Funding**
+- Demos of essential skills
+  - Cache git credentials
+  - Cloning a repository from GitHub to your computer using RStudio
+  - Stage - commit - pull - push
+  - Creating branches for feature development in RStudio
+  - Resolving merge conflicts
+  - Editing the `.gitignore` file
+  - What to do if something gets f*cked up
+  
+--
+  
+- Breakout groups to practice skills above
+
+---
+
+# Acknowledgements
+
+**Adapted from ** 
+- Jenny Bryan, Happy Git with R
+- Atlassian Git tutorials
+
+---
+
+# Why Git + GitHub
+
+
+- Git is a **version control system**. It originally helped softward developers work collaboratively to develop products. 
+
+--
+
+- Git manages the evolution of a set of files (i.e., **repository**). It's like Google Docs in that you can restore the status of your files from, say, a week ago. 
+
+--
+
+- Allows you to work from any computer (e.g., the FSH computer labs)
+
+--
+
+- More organized than say, saving version 1, version 2, **...** version 1000 of a single file
+
+--
+
+- Functions as an auxiliary back up of your code (though it should not be your **only** backup!!!!)
+
+---
+
+# Why **not** Git + GitHub
+
+- Painful to get set up the first time
+
+--
+
+- Change in workflow
+
+--
+
+- If you never need to share your project with others (none of us, probably)
+
+---
+
+# Why Git + GitHub
 
 .pull-left[
-```{r acknowledge1, echo = FALSE, out.width="80%"}
-knitr::include_graphics("libs/imgs/qermlogo.png")
+
+**Before git...**
+
+```{r before, echo = FALSE, out.width="100%"}
+knitr::include_graphics("libs/imgs/before_git.gif")
 ```
 ]
+
+--
 
 .pull-right[
-```{r acknowledge2, echo = FALSE, out.width="80%"}
-knitr::include_graphics("libs/imgs/wacfwru_logo.jpg")
+
+**After git...**
+
+```{r after, echo = FALSE, out.width="100%"}
+knitr::include_graphics("libs/imgs/after_git.gif")
 ```
 ]
 
---
+---
 
-**Modeling team**
-Peter Ryan, Cat Horswill, and others
-
---
-
-**Data**
-The Gough Island Restoration Programme is being carried out by the RSPB in partnership with Tristan da Cunha, BirdLife South Africa, the Department of Forestry, Fisheries and the Environment (South Africa), the Royal Zoological Society of Scotland, Island Conservation, Conservación de Islas, Manaaki Whenua - Landcare Research and BirdLife International. The programme is part-funded by the RSPB, the UK Government, the National Fish and Wildlife Foundation and other generous individuals and organisations.
+# Basic workflow
 
 --
 
-**Title slide image** Derren Fox **Final slide image** Chris Jones
+- Create a new repository on GitHub
+
+--
+
+- Make a new RStudio project (select from Version Control and follow prompts)
+
+--
+
+- Go about your business
+
+--
+
+- Periodically **commit** saved changes you've made to Git. Commits are like snapshots of the entire project.
+
+--
+
+- Periodically **push** those commits to GitHub. Pusing syncs the local repo with the remote repo
 
 ---
-class: final-slide, inverse
+
+# Basic workflow
+
+.center[
+```{r git-workflow, echo = FALSE, out.width="100%"}
+knitr::include_graphics("libs/imgs/Git Diagram.svg")
+```
+]
+
+---
+
+# Make and use a template repository
+
+## (one-time)
+
+---
+
+# Create a new repository on GitHub
+
+---
+
+# Cache git credentials 
+
+## (one-time)
+
+---
+
+# Make a new RStudio project
+
+---
+
+# Stage, commit, push
+
+---
+
+# Editing the `.gitignore` file
+
+---
+
+# Exercises
+
+- Email [Abby](aebratt@uw.edu) your GitHub handle so she can add you to the repository for this workshop
+
+- Create an SSH key in RStudio and store it in GitHub
+
+- Clone the [repository](https://github.com/aebratt/GSS-github-workshop) for this workshop to your computer
+
+- Make an R script titled `plot_*yourname*` inside the `scripts` folder that creates a plot of your choice using the data from the `data` folder. Stage, commit, and pull/push. 
+
+- Check GitHub to see your file on the internet
+
+---
+
+# Resolve merge conflicts
+
+- Git handles most merges on its own with smart automatic merging features
+
+--
+
+- Sometimes, though they are not so smart
+
+--
+
+- Most common when working collaboratively
+
+--
+
+- Same line in same file has been edited in two different places
+
+---
+
+# Exercises
+
+- Pull from GitHub
+
+- Make an edit to the person's plot file that is immediately below yours when sorted A-Z
+
+- Then make an edit to your own plot file
+
+- Stage, commit, pull and push
+
+- Resolve resulting merge conflict in **your own** plot file
+
+- Stage, commit, pull and push
+
+---
+
+# Advanced workflow
+
+- Go about your business, per the basic workflow
+
+--
+
+- Have an idea for a new feature (e.g., different model structure)
+
+--
+
+- Create a new branch to explore it
+
+--
+
+- **If it pans out**, merge branch back with `main`
+
+--
+
+- **If it doesn't**, abandon it, and continue working on clean `main` branch
+
+---
+
+# Advanced workflow
+
+.center[
+```{r git-workflow2, echo = FALSE, out.width="100%"}
+knitr::include_graphics("libs/imgs/git-branches-merge.png")
+```
+]
+
+---
+
+# Create branch for feature development
 
 
+---
+
+# Issue a pull request
+
+---
+
+# Exercises
+
+- Create a new branch titled `yourName`
+
+- Add a new feature to the file `plot_*yourname*`
+
+- Push changes to your branch to GitHub
+
+- On GitHub, issue a pull request to merge your branch with the main branch
+
+- Repo owner (Abby) will approve/deny the request
+
+---
+
+# Fixing a f*ck up - go back in time
+
+---
+
+# Fixing a f*ck up - really bad
+
+Start with Google, but here is one effective, if inelegant, way:
+
+- Push often, because the state on GitHub is your new "worst case scenario"
+
+- If you really screw things up locally, copy all the files (or the ones that have changed) to a safe place.
+Usually your files are JUST FINE. But it is easy to goof up the Git infrastructure when you’re new at this. And it can be hard to get that straightened out on your own.
+
+- Rename the existing local repo as a temporary measure, (before you do something radical, like delete it)
+
+- Clone the repo from GitHub to your local machine. You are back to a happy state.
+
+- Copy all relevant files back over from your safe space. The ones whose updated state you need to commit.
+
+- Stage and commit. Push. Carry on with your life.
+
+---
+
+# Exercises
+
+- Practice burning it all down and re-cloning from GitHub using this workshop's repository as an example
+
+---
+
+# If we have time
+
+- What to do if you have [large files](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github) (that you want on GitHub)
+- A little bit of Git from the command line
+- A little bit of Git from GitKraken
