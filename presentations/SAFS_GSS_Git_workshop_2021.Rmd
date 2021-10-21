@@ -301,7 +301,7 @@ knitr::include_graphics("libs/imgs/Git Diagram.svg")
 
 - Stage, commit, pull and push
 
-- Resolve resulting merge conflict in **your own** plot file
+- With your partner, resolve the resulting merge conflict
 
 - Stage, commit, pull and push
 
