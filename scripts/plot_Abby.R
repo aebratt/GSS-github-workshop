@@ -6,4 +6,4 @@ pokemon <- read_csv(here("data", "pokemon.csv"))
 
 ggplot(pokemon, aes(x = height_m, y = weight_kg, color = gen)) +
   geom_point() +
-  theme_minimal()
+  theme_void()
