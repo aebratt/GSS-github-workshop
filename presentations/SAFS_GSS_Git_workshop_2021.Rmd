@@ -191,6 +191,10 @@ knitr::include_graphics("libs/imgs/after_git.gif")
 
 ---
 
+# How we use Git
+
+---
+
 # Basic workflow
 
 --
