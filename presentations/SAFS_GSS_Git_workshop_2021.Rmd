@@ -125,8 +125,8 @@ library(chromote)
 # Acknowledgements
 
 **Adapted from ** 
-- Jenny Bryan, Happy Git with R
-- Atlassian Git tutorials
+- Jenny Bryan, [Happy Git with R](https://happygitwithr.com/)
+- [Atlassian Git tutorials](https://www.atlassian.com/git/tutorials)
 
 ---
 
