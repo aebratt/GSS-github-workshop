@@ -207,19 +207,92 @@ class: center, middle, inverse, title-slide
 
 ---
 
-# Make and use a template repository
+# Create a new repository on GitHub
 
-## (one-time)
+1. In the upper-right corner of any page, use the  drop-down menu, and select New repository.
+
+2. Type a name for your repository, and an optional description.
+
+3. Choose a repository visibility.
+
+.center[
+&lt;img src="libs/imgs/create-repository-public-private.png" width="50%" /&gt;
+]
+
+- Make sure you have a student account so you can use private repositories!
 
 ---
 
 # Create a new repository on GitHub
 
+&lt;ol start="4"&gt;
+    &lt;li&gt;Add any optional items you want to pre-populate your repository with:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;UL&gt;
+&lt;LI&gt; README: A document describing your project
+&lt;LI&gt; .gitignore file: which is a set of ignore rules (described more later)
+&lt;LI&gt; software license for your project
+&lt;/UL&gt;
+
+&lt;ol start="5"&gt;
+  &lt;li&gt;Click create repository&lt;/li&gt;
+&lt;/ol&gt;
+
+---
+
+# Template repository
+
+--
+
+- What is a template repository: "A filing cabinet" repository
+
+--
+
+- A template repository enables users to:
+  - Mark a repository as a template
+  - Copy entire repository directory structure and files to a brand new repository
+  - Share repository templates with other GitHub users
+
+---
+
+# Make and use a template repository
+
+--
+
+1. Create a new repository and put template in its name (e.g., project_template)
+
+--
+
+2. Add folders to the new repository (e.g., scripts, data, documents, presentations, etc.)
+
+--
+
+3. Then convert the repository as a template repository (in settings)
+
+--
+
+4. Create a brand new repository and use "project_template" as your template repository
+
+--
+
+- Let's try it out!
+
 ---
 
 # Cache git credentials 
 
-## (one-time)
+- When we interact with a remote Git server (GitHub) we have to include credentials to prove we are a specific GitHub user
+
+- Git can communicate with a remote server using one of two protocols, HTTPS or SSH, and the different protocols use different credentials.
+
+- Here we describe the credential setup for the SSH protocol. 
+
+- HTTPS vs SSH?? read [here](https://ourtechroom.com/tech/https-vs-ssh-in-git/) or [ here](https://happygitwithr.com/https-pat.html#https-vs-ssh)
+
+[reference 1](https://happygitwithr.com/https-pat.html)
+
+[reference 2](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh)
 
 ---
 
@@ -251,6 +324,14 @@ class: center, middle, inverse, title-slide
 
 # Resolve merge conflicts
 
+- Merge conflict: when the same line in a same file has been edited in two different places
+
+--
+
+- Most common when working collaboratively
+
+--
+
 - Git handles most merges on its own with smart automatic merging features
 
 --
@@ -259,11 +340,44 @@ class: center, middle, inverse, title-slide
 
 --
 
-- Most common when working collaboratively
+---
 
---
+# Resolve merge conflicts
 
-- Same line in same file has been edited in two different places
+.center[
+&lt;img src="libs/imgs/gitconflict.png" width="100%" /&gt;
+]
+
+[reference](https://coderefinery.github.io/git-intro/08-conflicts/)
+
+---
+
+# Resolve merge conflicts
+
+- Git inserts resolution markers (the &lt;&lt;&lt;&lt;&lt;&lt;&lt;, &gt;&gt;&gt;&gt;&gt;&gt;&gt;, and =======).
+
+.center[
+&lt;img src="libs/imgs/ConflictR.PNG" width="50%" /&gt;
+] 
+
+---
+
+# Resolve merge conflicts
+
+.center[
+&lt;img src="libs/imgs/ConflictR2.PNG" width="20%" /&gt;
+] 
+
+- We have to edit the code/text between the resolution markers. 
+
+- Simple steps:
+1. Decide what you keep (the one, the other, or both or something else). Edit the file to do this.
+
+2. Remove the resolution markers, if not already done.  
+
+3. The file(s) should now look exactly how you want them.
+
+4. Stage, Commit, Pull, Push
 
 ---
 
