@@ -282,17 +282,159 @@ class: center, middle, inverse, title-slide
 
 # Cache git credentials 
 
+--
+
 - When we interact with a remote Git server (GitHub) we have to include credentials to prove we are a specific GitHub user
+
+--
 
 - Git can communicate with a remote server using one of two protocols, HTTPS or SSH, and the different protocols use different credentials.
 
+--
+
 - Here we describe the credential setup for the SSH protocol. 
+
+--
 
 - HTTPS vs SSH?? read [here](https://ourtechroom.com/tech/https-vs-ssh-in-git/) or [ here](https://happygitwithr.com/https-pat.html#https-vs-ssh)
 
 [reference 1](https://happygitwithr.com/https-pat.html)
 
 [reference 2](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh)
+
+---
+
+# Check for existing SSH Keys
+
+--
+
+1. Open Git Bash (PC users) or your shell (Apple users)
+
+--
+
+2. Type: 
+
+ ls -al ~/.ssh to see if existing SSH keys are present.
+
+--
+
+3. Check directory listing. If you have a public SSH key you will have one of the following file names: 
+
+- id_rsa.pub 
+- id_ecdsa.pub
+- id_ed25519.pub 
+
+.center[
+&lt;img src="libs/imgs/Cache1.PNG" width="50%" /&gt;
+]
+
+---
+
+# Generate a new SSH Key
+
+--
+
+1. Open Git Bash/shell. Paste the text below, substituting in your GitHub email address: 
+
+ ssh-keygen -t ed25519 -C "your_email@example.com" 
+
+--
+
+2. When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+
+--
+
+3. At the prompt, type a secure passphrase.
+
+--
+
+---
+
+# Adding SSH key to the ssh-agent
+
+--
+
+1. Ensure the ssh-agent is running. By typing in the shell: 
+
+ eval "$(ssh-agent -s)"
+
+ You should get: Agent pid #s
+
+--
+
+2. Add your SSH private key to the ssh-agent. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_ed25519 in the command with the name of your private key file. Type in the shell: 
+
+ ssh-add ~/.ssh/id_ed25519
+
+---
+
+# Adding SSH key to Github
+
+--
+
+1. Copy the SSH public key to your clipboard. In the shell type:
+
+ clip &lt; ~/.ssh/id_ed25519.pub
+
+--
+
+2. In Github, click your profile photo and click Settings
+
+--
+
+3. In the user settings sidebar, click SSH and GPG keys.
+
+--
+
+4. Click New SSH key or Add SSH key
+
+--
+
+5. In the "Title" field, add a descriptive label for the new key. (e.g., Personal laptop) 
+
+--
+
+6. Paste your key into the "Key" field.
+
+--
+
+7. Click Add SSH key.
+
+--
+
+---
+
+# Finally... test your SSH connection!
+
+--
+
+1. Open Git Bash/shell 
+
+--
+
+2. Enter the following:  
+
+ ssh -T git@github.com  
+ 
+ You may see a warning like this:
+
+ The authenticity of host 'github.com (IP ADDRESS)' can't be established.
+ RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+ Are you sure you want to continue connecting (yes/no)?  
+ 
+--
+
+3. Verify that the fingerprint in the message you see matches GitHub's RSA public key fingerprint. If it does, then type yes:
+
+ You should get the message: 
+ 
+ Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+
+---
+
+# Finally... test your SSH connection!
+
+- Verify that the message contains your username. If you are denied permission see [here](https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey)
 
 ---
 
@@ -364,18 +506,31 @@ class: center, middle, inverse, title-slide
 
 # Resolve merge conflicts
 
+--
+
 .center[
 &lt;img src="libs/imgs/ConflictR2.PNG" width="20%" /&gt;
 ] 
 
 - We have to edit the code/text between the resolution markers. 
 
+--
+
 - Simple steps:
+
+--
+
 1. Decide what you keep (the one, the other, or both or something else). Edit the file to do this.
+
+--
 
 2. Remove the resolution markers, if not already done.  
 
+--
+
 3. The file(s) should now look exactly how you want them.
+
+--
 
 4. Stage, Commit, Pull, Push
 
