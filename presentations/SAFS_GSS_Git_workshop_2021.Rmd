@@ -256,7 +256,7 @@ knitr::include_graphics("libs/imgs/create-repository-public-private.png")
 <UL>
 <LI> README: A document describing your project
 <LI> .gitignore file: which is a set of ignore rules (described more later)
-<LI> software license for your project
+<LI> software license for your project <a href="https://choosealicense.com/">(see reference)</a>
 </UL>
 
 <ol start="5">
