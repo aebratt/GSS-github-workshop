@@ -243,8 +243,6 @@ knitr::include_graphics("libs/imgs/create-repository-public-private.png")
 ```
 ]
 
-- Make sure you have a student account so you can use private repositories!
-
 ---
 
 # Create a new repository on GitHub
@@ -254,7 +252,7 @@ knitr::include_graphics("libs/imgs/create-repository-public-private.png")
 </ol>
 
 <UL>
-<LI> README: A document describing your project
+<LI> README: A text document describing your project
 <LI> .gitignore file: which is a set of ignore rules (described more later)
 <LI> software license for your project <a href="https://choosealicense.com/">(see reference)</a>
 </UL>
