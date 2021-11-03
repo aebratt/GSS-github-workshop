@@ -99,6 +99,10 @@ library(chromote)
 
 `r icons::icon_style(icons::fontawesome("graduation-cap"), scale = 1, fill = "#b58900")` **Optional** [Sign up for free student resources on GitHub](https://education.github.com/pack)
 
+--
+
+**BONUS HOMEWORK** Email Abby your GitHub handle so she can add you to the repository for this workshop
+
 ---
 
 # Outline of workshop
