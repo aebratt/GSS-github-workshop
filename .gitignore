@@ -28,3 +28,6 @@
 
 # R Environment Variables
 .Renviron
+
+# Mac things
+.DE_Store
