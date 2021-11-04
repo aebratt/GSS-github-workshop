@@ -3,5 +3,5 @@ pokemon<-read_csv("data/pokemon.csv")
 
 
 
-ggplot(pokemon) + geom_histogram(aes(gen), stat = "count", fill = "pink")
+ggplot(pokemon) + geom_histogram(aes(gen), stat = "count", fill = "orange")
 
